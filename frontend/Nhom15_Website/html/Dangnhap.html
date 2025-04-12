@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập </title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Căn giữa cả theo chiều ngang và chiều dọc */
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #DN {
+            width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .nhap {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .nutDN {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .nutDN:hover {
+            background-color: #45a049;
+        }
+
+        .text-link {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        p {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="header"></div>
+
+
+    <section class="login-section">
+        <div id="DN">
+            <h2><b>ĐĂNG NHẬP TÀI KHOẢN</b></h2>
+            <form>
+                <input type="email" class="nhap" id="txtemail" placeholder="Email" onblur="checkEmail()">
+                <input type="password" class="nhap" id="txtpass" placeholder="Mật khẩu" onblur="checkMatKhau()">
+                <p><a href="#" class="text-link">Bạn quên mật khẩu? Hãy bấm tại đây</a></p>
+                <button type="reset" class="nutDN" onclick="dangnhap()">Đăng nhập</button>
+                <p>Chưa có tài khoản đăng ký <a href="../html/dangKyThanhVien.html" class="textDK">tại đây</a></p>
+                <p id="message">(*)</p>
+            </form>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+    <script>
+        function checkEmail() {
+            const email = document.getElementById("txtemail").value;
+            const message = document.getElementById("message");
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailRegex.test(email)) {
+                message.style.color = "green";
+                message.textContent = "Email hợp lệ!";
+                return true;
+            } else {
+                message.style.color = "red";
+                message.textContent = "Email phải có dạng email@gmail.com!";
+                return false;
+            }
+        }
+        function checkMatKhau() {
+            const password = document.getElementById("txtpass").value;
+            const message = document.getElementById("message");
+
+            // Kiểm tra độ dài, chữ hoa, chữ thường, số, và ký tự đặc biệt
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (passwordRegex.test(password)) {
+                message.style.color = "green";
+                message.textContent = "Mật khẩu hợp lệ!";
+                return true;
+            } else {
+                message.style.color = "red";
+                message.textContent = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!";
+                return false;
+            }
+        }
+        function dangnhap() {
+            if (checkMatKhau() == true && checkEmail() == true) {
+                alert("Đăng nhập thành công!");
+                const message = document.getElementById("message");
+                message.style.color = "black";
+                message.innerText = "(*)";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

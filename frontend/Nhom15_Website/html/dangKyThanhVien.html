@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký thành viên</title>
+  <link rel="stylesheet" href="../css/font-style.css">
+  <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+  <script src="../js/jquery-3.3.1.js"></script>
+  <!--Xử lý thêm trang header và footer-->
+  <script src="../js/js-custome.js"></script>
+</head>
+
+<body>
+  <!--Header-->
+  <div id="header"></div>
+  <div class="container my-5">
+    <h2 class=" text-center"><b>ĐĂNG KÝ THÀNH VIÊN</b></h2>
+    <form id="registrationForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Tên đăng nhập:</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mật khẩu:</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Số điện thoại:</label>
+        <input type="text" class="form-control" id="phone" required>
+      </div>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" onclick="validateForm()">
+          Đăng ký
+        </button>
+      </div>
+      <div id="errorMessage" class="mt-3 text-center text-danger"></div>
+    </form>
+  </div>
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const errorMessage = document.getElementById('errorMessage');
+      errorMessage.innerHTML = '';
+
+      // Field validation
+      if (!username || !password || !email || !phone) {
+        errorMessage.innerHTML = 'Vui lòng nhập đầy đủ thông tin vào các trường bắt buộc!';
+      } else if (!validatePass(password)) {
+        errorMessage.innerHTML = 'Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!';
+      } else if (!validateEmail(email)) {
+        errorMessage.innerHTML = 'Email phải có dạng email@gmail.com!';
+      } else if (!/^[0-9]{10}$/.test(phone)) {
+        errorMessage.innerHTML = 'Số điện thoại phải chứa 10 ký số!';
+      } else {
+        var infomation = `<span class="text-success">Đăng ký thành công cho tài khoản có thông tin: <br> Username: ${username} <br> Email: ${email} <br> Số điện thoại: ${phone}</span>`;
+        errorMessage.innerHTML = infomation;
+        // Proceed with form submission or further processing
+      }
+    }
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function validatePass(password) {
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      return passwordRegex.test(password);
+    }
+  </script>
+  <div id="footer"></div>
+</body>
+
+</html>

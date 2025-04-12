@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/product-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <!--product detail-->
+    <div class="product-detail container-fluid my-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb p-2">
+                <li class="breadcrumb-item"><a href="../html/home.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/danh-sach-sp-noi-dia.html">Sản phẩm nội địa</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sầu Riêng Chuồng Bò Nguyên Trái</li>
+            </ol>
+        </nav>
+        <div class="product-detail-content container-fluid border rounded p-2">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Product image -->
+                    <div class="row d-flex flex-column justify-content-center">
+                        <div class="col-md-8">
+                            <img class="img-fluid product-main-img" src="../img/sp-noi-dia-2.jpg" alt="">
+                        </div>
+                        <div class="col-4 product-small-img d-flex">
+                            <img class="img-fluid" src="../img/sp-noi-dia-2.jpg" alt="">
+                            <img class="img-fluid" src="../img/sp-noi-dia-2.jpg" alt="">
+                            <img class="img-fluid" src="../img/sp-noi-dia-2.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Product information -->
+                <div class="col-md-7">
+                    <div class="row">
+                        <h2 class="my-3">
+                            Sầu Riêng Chuồng Bò Nguyên Trái
+                        </h2>
+                        <div class="col-md-6 border-top">
+                            <h6>
+                                Thương hiệu: <span class="text-success">SuperFruits</span> | Tình trạng:
+                                <span class="text-success">Còn hàng</span>
+
+                            </h6>
+                            <h6>
+                                Đánh giá: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                            </h6>
+                            <h4 class="my-5">
+                                <strong class="text-success border-bottom"><b>260.000₫</b></strong>
+                            </h4>
+
+                            <div class="">
+                                <button class="btn btn-success add-button border-top p-2"
+                                    onclick="themChiTietSauRieng()">Thêm
+                                    vào giỏ
+                                    hàng</button>
+                            </div>
+                        </div>
+                        <!-- Aside -->
+                        <div class="product-detail-aside col-md-5 p-3 border border-2 rounded pe-5 border-success">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5><strong>Chỉ có tại SuperFruits</strong></h5>
+                                </li>
+                                <li><i class="fa-solid fa-truck"></i> Miễn phí giao hàng cho đơn từ 500k</li>
+                                <li> <i class="fa-brands fa-cc-amazon-pay"></i> Thanh toán An toàn và Đa dạng</li>
+                                <li><i class="fa-solid fa-headset"></i> Hỗ trợ 24/7 </li>
+                                <li><i class="fa-regular fa-star "></i> Cam kết nguồn gốc xuất sứ rõ ràng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sort-decription container-fluid my-5 p-2 border rounded">
+            <h3><strong>Mô tả</strong></h3>
+            <hr>
+            <ul>
+                <li>Vùng canh tác: Việt Nam</li>
+                <li>Tiêu chuẩn: Nội địa</li>
+                <li>Đặc điểm: <ul>
+                        <li>Sầu riêng chuồng bò thuộc giống sầu riêng có kích thước nhỏ với trọng lượng chỉ khoảng 1 -
+                            2.5kg. Quả có dáng hình trụ, hơi bầu bầu với phần gai to và dày.
+                        </li>
+                        <li>Sầu riêng chuồng bò khi chín sẽ có vỏ màu vàng xám.</li>
+                        <li>Phần cơm sầu riêng chuồng bò có màu vàng nhàn nhạt, cơm mềm và hơi nhão. Khi ăn sẽ cảm thấy
+                            vị ngọt nhẹ không quá ngọt gắt và có vị beo béo hơn hẳn so với các giống sầu riêng khác.
+                        </li>
+                        <li>Sầu không sử dụng hoá chất trong quá trình canh tác, không nhúng chất kích chín rất an toàn
+                            cho sức khoẻ.</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!--The same category-->
+        <div class="product-detail-category container-fluid my-5 border rounded p-2">
+            <h3><strong>Sản phẩm cùng loại</strong></h3>
+            <hr>
+            <div class="row ms-2">
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-noi-dia-1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Chuối Laba Loại 1 Org 1kg</h5>
+                            <p class="card-text">45.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-noi-dia-chuoi.html" class="btn btn-primary">Chi tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-noi-dia-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sầu Riêng Chuồng Bò Nguyên Trái</h5>
+                            <p class="card-text">260.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-noi-dia-sau-rieng.html" class="btn btn-primary">Chi
+                                    tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-noi-dia-3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Dưa lưới biển Hằng Nga hữu cơ 1kg</h5>
+                            <p class="card-text">120.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-noi-dia-dua.html" class="btn btn-primary">Chi tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-noi-dia-4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Vải U Trứng Phù Cừ 1kg</h5>
+                            <p class="card-text">320.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-noi-dia-vai.html" class="btn btn-primary">Chi tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
+</body>
+
+</html>

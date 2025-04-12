@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="../css/bootstrap-5.3.3.css" rel="stylesheet">
+    <!--Thư viện để thêm các icon mạng xã hội-->
+    <link rel="stylesheet" href="../fontawesome-6.7.1/css/all.css">
+    <!-- Latest compiled JavaScript -->
+    <!--Thư viện để hoạt động nút collapse button-->
+    <script src="../js/bootstrap-5.3.3.js"></script>
+    <script src="../js/js-addtocart.js"></script>
+    <style>
+        .logo {
+            height: 70px;
+            width: 70px;
+        }
+
+        #header {
+            height: 145px;
+        }
+
+        .header-top {
+            background-color: #00aa00;
+        }
+
+        .header-short-information {
+            font-size: 12px;
+        }
+
+        .header-short-information .shop-name {
+            font-size: 14px;
+            letter-spacing: 3px;
+        }
+
+        .social-icons li a {
+            color: white;
+        }
+
+        .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar form {
+            margin-right: 20px;
+        }
+
+        .navbar button {
+            background-color: #00aa00;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .nav-item-left {
+            text-decoration: none;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            border-radius: 0.75rem;
+            color: black;
+        }
+
+        .nav-item-left i {
+            padding: 5px;
+        }
+
+        /* Auto dropdown (dropdown list) */
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+            /*Without this, clicking will make it sticky*/
+            pointer-events: none;
+        }
+
+        /* navbar-hover-css */
+        nav.circle ul li a {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        nav.circle ul li a:after {
+            display: block;
+            position: absolute;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: ".";
+            color: transparent;
+            width: 1px;
+            height: 1px;
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        nav.circle ul li a:hover:after {
+            -webkit-animation: circle 1.5s ease-in forwards;
+        }
+
+        @-webkit-keyframes circle {
+            0% {
+                width: 1px;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                height: 1px;
+                z-index: -1;
+                background: #eee;
+                border-radius: 100%;
+            }
+
+            100% {
+                background: #00aa00;
+                height: 5000%;
+                width: 5000%;
+                z-index: -1;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: 0;
+            }
+        }
+
+        /* Sidebar css */
+        .sidebar {
+            background-color: rgb(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="header" class="fixed-top">
+        <div class="header-top border-bottom py-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <p class="header-short-information text-center text-white m-0 ">
+                            <strong class="shop-name">Super Fruit</strong> <i> | Trái cây không chỉ là thức ăn, mà còn
+                                là nghệ thuật sống.</i>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <ul class="social-icons d-flex justify-content-end gap-3 list-unstyled m-0">
+                            <li class="pe-2">
+                                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="pe-2">
+                                <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white circle border-bottom ps-5">
+            <div class="container-fluid">
+                <a class="navbar-brand p-2" href="../html/home.html"><img src="../img/logowithname.png" class="logo"
+                        alt="logo"><strong style="color:darkolivegreen; letter-spacing: 5px; margin-left: 10px;">Super
+                        Fruits</strong></a>
+                <!--Toggler button-->
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar2">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Side bar-->
+                <div class="sidebar offcanvas offcanvas-start" id="offcanvasNavbar2">
+                    <!--Sidebar Header-->
+                    <div class="offcanvas-header border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbar2Label"><img src="../img/logowithname.png"
+                                style="height: 70px; width: 70px;" alt="logo"></h5>
+                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <!--SideBar Body-->
+                    <div class="offcanvas-body d-flex flex-column flex-column flex-lg-row p-4 ">
+                        <ul class="navbar-nav pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/home.html">Trang chủ</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Sản
+                                    phẩm</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-nhap-khau.html">Trái cây
+                                            nhập
+                                            khẩu</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="../html/danh-sach-sp-noi-dia.html">Trái cây nội
+                                            địa</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/AboutUs.html">Về chúng tôi</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex ms-3">
+                            <input class="form-control" type="search" placeholder="Tìm kiếm...">
+                            <button class="btn btn-outline-success" type="submit"><i
+                                    class="fa-solid fa-magnifying-glass m-0"></i></button>
+                        </form>
+                        <div class="d-flex flex-column flex-lg-row gap-3">
+                            <a class="nav-item-left" href="../html/Dangnhap.html">
+                                <i class="fas fa-sign-in-alt icon"></i>Đăng nhập
+                            </a>
+                            <a class="nav-item-left" href="../html/dangKyThanhVien.html">
+                                <i class="fas fa-user-plus icon"></i>Đăng ký
+                            </a>
+                            <a class="nav-item-left" href="../html/gio-hang.html">
+                                <span id="cart-item-quantity" class="text-danger">(0)</span>
+                                <i class="fas fa-shopping-cart icon"></i>Giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>
