@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
+<h1>Danh sách sản phẩm</h1>
+<a href="/products/add">
+    <button>Thêm sản phẩm</button>
+</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Ảnh</th>
+        <th>Chức năng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Lặp qua danh sách sản phẩm và hiển thị -->
+    <th:block th:each="product : ${products}">
+        <tr>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td><img th:src="${product.imageUrl}" alt="Image" width="100" /></td>
+            <td>
+                <a th:href="@{/products/{id}(id=${product.id})}">Chi tiết</a> |
+                <a th:href="@{/products/delete/{id}(id=${product.id})}">Xóa</a>
+            </td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+
+<h2>Tìm kiếm sản phẩm</h2>
+<form action="/products/search" method="get">
+    <input type="text" name="name" placeholder="Tìm sản phẩm theo tên" required />
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+<h2>Lọc sản phẩm theo giá</h2>
+<form action="/products/filter" method="get">
+    <input type="number" name="minPrice" placeholder="Giá tối thiểu" required />
+    <input type="number" name="maxPrice" placeholder="Giá tối đa" required />
+    <button type="submit">Lọc</button>
+</form>
+</body>
+</html>
