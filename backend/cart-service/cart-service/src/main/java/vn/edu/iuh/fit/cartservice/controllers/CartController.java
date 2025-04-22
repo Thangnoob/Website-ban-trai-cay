@@ -25,7 +25,8 @@ public class CartController {
     @PostMapping("/create")
     public ResponseEntity<?> createCart(@RequestParam(defaultValue = "Guest") String name) {
         try {
-            Cart cart = cartService.createCart(name);
+//            Cart cart = cartService.createCart(name);
+            Cart cart = cartService.createCartToRedis(name);
             return ResponseEntity.ok("Tạo giỏ hàng thành công: \n" + cartService.getCartDTO(cart.getId()));
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -51,15 +52,19 @@ public class CartController {
         try {
             if (!cartService.cartExists(cartId) && cartService.productExists(productId)) {
                 // Tạo giở hàng mới
-                Cart cart = cartService.createCart(name);
-                cartService.addToCart(cart.getId(), productId, quantity);
+//                Cart cart = cartService.createCart(name);
+                Cart cart = cartService.createCartToRedis(name);
+
+//                cartService.addToCart(cart.getId(), productId, quantity);
+                cartService.addToCartRedis(cartId, productId, quantity);
                 return ResponseEntity.ok("Không có giỏ hàng này. " +
                         "Đã tạo giỏ hàng cho khách hàng " + name + " (ID =  " + cart.getId() + "). " +
                         "Thêm sản phẩm thành công");
             } else {
                 // Sử dụng giỏ hàng cũ
                 Product product = cartService.getProduct(productId);
-                cartService.addToCart(cartId, productId, quantity);
+//                cartService.addToCart(cartId, productId, quantity);
+                cartService.addToCartRedis(cartId, productId, quantity);
                 return ResponseEntity.ok(cartService.getCartItemDTO(product, quantity));
             }
         } catch (RuntimeException e) {
@@ -84,7 +89,8 @@ public class CartController {
         }
 
         try {
-            cartService.updateCartItem(cartId, productId, quantity);
+//            cartService.updateCartItem(cartId, productId, quantity);
+            cartService.updateCartItemRedis(cartId, productId, quantity);
             return ResponseEntity.ok("Cập nhật số lượng thành công.");
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -103,7 +109,9 @@ public class CartController {
         }
 
         try {
-            cartService.removeCartItem(cartId, productId);
+//            cartService.removeCartItem(cartId, productId);
+
+            cartService.removeCartItemRedis(cartId, productId);
             return ResponseEntity.ok("Xóa sản phẩm khỏi giỏ hàng thành công.");
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -111,12 +119,12 @@ public class CartController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveCart(@RequestParam(required = false) int cartId) {
+    public ResponseEntity<?> saveCart(@RequestParam(required = false) Integer cartId) {
         try {
-            cartService.saveCart(cartId);
+            cartService.saveCartFromRedisToDatabase(cartId);
             return ResponseEntity.ok("Lưu giỏ hàng thành công.");
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body("Lỗi: " + e.getMessage());
+            return ResponseEntity.badRequest().body("Giỏ hàng không tồn tại");
         }
     }
 
@@ -128,7 +136,7 @@ public class CartController {
         else if (!cartService.cartExists(cartId)) {
             return ResponseEntity.badRequest().body("Giỏ hàng không tồn tại");
         }
-        else return ResponseEntity.ok(cartService.getCartDTO(cartId));
+        else return ResponseEntity.ok(cartService.viewCartFromRedis(cartId));
     }
 
 }
