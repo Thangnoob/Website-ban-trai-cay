@@ -19,13 +19,13 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Tran Thi Thanh Quynh",
+									"value": "Test gio hang",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/cart/create?name=Tran Thi Thanh Quynh",
+							"raw": "http://localhost:8080/api/cart/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -35,12 +35,6 @@
 								"api",
 								"cart",
 								"create"
-							],
-							"query": [
-								{
-									"key": "name",
-									"value": "Tran Thi Thanh Quynh"
-								}
 							]
 						}
 					},
@@ -62,17 +56,17 @@
 							"urlencoded": [
 								{
 									"key": "cartId",
-									"value": "7",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "productId",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "quantity",
-									"value": "50",
+									"value": "3250",
 									"type": "text"
 								}
 							]
@@ -103,17 +97,17 @@
 							"urlencoded": [
 								{
 									"key": "cartId",
-									"value": "2",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "productId",
-									"value": "1",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "quantity",
-									"value": "111",
+									"value": "1200",
 									"type": "text"
 								}
 							]
@@ -144,12 +138,12 @@
 							"urlencoded": [
 								{
 									"key": "cartId",
-									"value": "1",
+									"value": "3",
 									"type": "text"
 								},
 								{
 									"key": "productId",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								}
 							]
@@ -183,7 +177,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/cart/view?cartId=",
+							"raw": "http://localhost:8080/api/cart/view?cartId=3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -197,7 +191,34 @@
 							"query": [
 								{
 									"key": "cartId",
-									"value": ""
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/save?cartId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"save"
+							],
+							"query": [
+								{
+									"key": "cartId",
+									"value": "3"
 								}
 							]
 						}
