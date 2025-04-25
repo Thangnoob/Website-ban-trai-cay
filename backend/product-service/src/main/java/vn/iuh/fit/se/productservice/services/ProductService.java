@@ -36,6 +36,7 @@ public class ProductService {
 
     // Tìm kiếm sản phẩm theo tên
     public List<Product> searchProductsByName(String name) {
+
         return productRepository.findByNameContaining(name);
     }
 
