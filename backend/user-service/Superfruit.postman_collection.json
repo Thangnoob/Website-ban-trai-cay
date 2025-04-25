@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "f499455c-374c-4407-b0bd-b73ce8ea682d",
+		"name": "Superfruit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42926163",
+		"_collection_link": "https://orange-equinox-487275.postman.co/workspace/SuperFruit~bf78e4da-2180-4b30-b1dd-236d83fe94db/collection/42926163-f499455c-374c-4407-b0bd-b73ce8ea682d?action=share&source=collection_link&creator=42926163"
+	},
+	"item": [
+		{
+			"name": "LoginRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abc@gmail.com\",\r\n    \"password\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterRequest",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"abc\",\r\n    \"password\": \"abc\",\r\n    \"email\": \"abc@gmail.com\",\r\n    \"phoneNumber\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmNAZ21haWwuY29tIiwiaWF0IjoxNzQ1NjIxMTI3LCJleHAiOjE3NDU2MjQ3Mjd9.TKD3xQZ_AzQSMRRG6FFUsvQ0X-tqVRXu0kgGLmHbCuTlaJLGVX6Bc3tZr00PH_Yzt63bW0XN__vPuSbyijVJgg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
