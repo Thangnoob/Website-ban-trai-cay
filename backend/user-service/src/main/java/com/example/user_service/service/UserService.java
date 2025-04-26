@@ -47,4 +47,8 @@ public class UserService {
         }
         return jwtUtil.generateToken(user.getEmail());
     }
+
+    public User getUserProfile(String email) {
+        return userRepository.findByEmail(email);
+    }
 }

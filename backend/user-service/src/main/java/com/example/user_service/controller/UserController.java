@@ -6,6 +6,7 @@ import com.example.user_service.entity.User;
 import com.example.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -32,5 +33,12 @@ public class UserController {
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<?> getProfile() {
+        String email = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.getUserProfile(email);
+        return ResponseEntity.ok(user);
     }
 }
