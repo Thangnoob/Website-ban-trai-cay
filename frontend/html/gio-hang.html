@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/product-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+</head>
+
+<body onload="loadDataCart()">
+    <!--Header-->
+    <div id="header"></div>
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-8 cart-content border   ">
+                <div class="cart-title p-3">
+                    <div class="row">
+                        <div class="col-5 border-bottom">
+                            <h4>Tên sản phẩm</h4>
+                        </div>
+                        <div class="col-3 border-bottom">
+                            <h4>Giá</h4>
+                        </div>
+
+                        <div class="col-4 border-bottom">
+                            <h4>Số lượng</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item-list" id="cart-information">
+
+
+                </div>
+                <a class="text-danger text-decoration-none d-flex justify-content-end" onclick="deleteCart()"
+                    style="cursor: pointer;">Xóa
+                    rỗng giỏ hàng</a>
+            </div>
+            <div class="col-4 order p-3 border">
+                <h3 class="border-bottom">Hóa đơn</h3>
+                <div class="d-flex flex-row justify-content-between p-2">
+                    <span>Phí ship</span>
+                    <span>25%</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between p-2 border-bottom">
+                    <span>Giảm giá</span>
+                    <span>25%</span>
+                </div>
+                <div class="d-flex flex-row justify-content-between p-2 mt-4">
+                    <h3>Tổng tiền</h3>
+                    <h4 class="total-price text-danger">0</h4>
+                </div>
+                <div class="d-flex flex-row justify-content-center p-2 mt-2">
+                    <button class="btn btn-success w-100" type="button" style="width:7rem; font-size: 18px;"
+                        id="payButton">Thanh toán</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

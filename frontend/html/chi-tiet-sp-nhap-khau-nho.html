@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/product-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <!--product detail-->
+    <div class="product-detail container-fluid my-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb p-2">
+                <li class="breadcrumb-item"><a href="../html/home.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="../html/danh-sach-sp-nhap-khau.html">Sản phẩm nhập khẩu</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Việt quất New Zealand 1 hộp 125g</li>
+            </ol>
+        </nav>
+        <div class="product-detail-content container-fluid border rounded p-2">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Product image -->
+                    <div class="row d-flex flex-column justify-content-center">
+                        <div class="col-md-8">
+                            <img class="img-fluid product-main-img" src="../img/sp-nhap-khau-4.jpg" alt="">
+                        </div>
+                        <div class="col-4 product-small-img d-flex">
+                            <img class="img-fluid" src="../img/sp-nhap-khau-4.jpg" alt="">
+                            <img class="img-fluid" src="../img/sp-nhap-khau-4.jpg" alt="">
+                            <img class="img-fluid" src="../img/sp-nhap-khau-4.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Product information -->
+                <div class="col-md-7">
+                    <div class="row">
+                        <h2 class="my-3">
+                            Việt quất New Zealand 1 hộp 125g
+                        </h2>
+                        <div class="col-md-6 border-top">
+                            <h6>
+                                Thương hiệu: <span class="text-success">SuperFruits</span> | Tình trạng:
+                                <span class="text-success">Còn hàng</span>
+
+                            </h6>
+                            <h6>
+                                Đánh giá: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                            </h6>
+                            <h4 class="my-5">
+                                <strong class="text-success border-bottom"><b>435.000₫</b></strong>
+                            </h4>
+
+                            <div class="">
+                                <button class="btn btn-success add-button border-top p-2"
+                                    onclick="themChiTietNho()">Thêm
+                                    vào giỏ
+                                    hàng</button>
+                            </div>
+                        </div>
+                        <!-- Aside -->
+                        <div class="product-detail-aside col-md-5 p-3 border border-2 rounded pe-5 border-success">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <h5><strong>Chỉ có tại SuperFruits</strong></h5>
+                                </li>
+                                <li><i class="fa-solid fa-truck"></i> Miễn phí giao hàng cho đơn từ 500k</li>
+                                <li> <i class="fa-brands fa-cc-amazon-pay"></i> Thanh toán An toàn và Đa dạng</li>
+                                <li><i class="fa-solid fa-headset"></i> Hỗ trợ 24/7 </li>
+                                <li><i class="fa-regular fa-star "></i> Cam kết nguồn gốc xuất sứ rõ ràng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sort-decription container-fluid my-5 p-2 border rounded">
+            <h3><strong>Mô tả</strong></h3>
+            <hr>
+            <ul>
+                <li>Xuất xứ: New zealand</li>
+                <li>Tiêu chuẩn: Nhập khẩu</li>
+                <li>Đặc điểm: <ul>
+                        <li>Trái siêu to, kích thước xấp xỉ bằng hạt macca, size rất hiếm trên thị trường.
+                        </li>
+                        <li>Cứng trái, cắn vào bụp bụp rất thú vị, bên trong mềm tan cùng vị ngọt thanh và
+                            hương
+                            thơm
+                            đặc trưng chuẩn vị việt quất nhập khẩu chính gốc.</li>
+                        <li>Theo đánh giá của nhiều chuyên gia, quả việt quất được thu hoạch tại New Zealand
+                            cho
+                            chất
+                            lượng cao và nhiều dưỡng chất nhất.</li>
+                        <li> Việt quất là một trong những loại quả mọng giàu chất dinh dưỡng nhất. Duy trì
+                            thói
+                            quen ăn
+                            việt quất, chúng sẽ mang đến những lợi ích mà bạn không thể ngờ.</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!--The same category-->
+        <div class="product-detail-category container-fluid my-5 border rounded p-2">
+            <h3><strong>Sản phẩm cùng loại</strong></h3>
+            <hr>
+            <div class="row ms-2">
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-nhap-khau-1.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Táo Queen Organic New Zealand 1kg</h5>
+                            <p class="card-text">158.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-nhap-khau-tao-queen.html" class="btn btn-primary">Chi
+                                    tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-nhap-khau-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Táo Xanh Grany Smith Hữu Cơ 1kg</h5>
+                            <p class="card-text">139.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-nhap-khau-tao-xanh.html" class="btn btn-primary">Chi
+                                    tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-nhap-khau-3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Dâu Tuyết Hàn Quốc 330g</h5>
+                            <p class="card-text">149.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-nhap-khau-dau.html" class="btn btn-primary">Chi tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="../img/sp-nhap-khau-4.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Việt quất New Zealand 1 hộp 125g</h5>
+                            <p class="card-text">435.000₫</p>
+                            <div class="card-button">
+                                <a href="../html/chi-tiet-sp-nhap-khau-nho.html" class="btn btn-primary">Chi tiết</a>
+                                <a class="add-cart btn btn-success border border-1 border-dark">Thêm vào giỏ
+                                    hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
+</body>
+
+</html>

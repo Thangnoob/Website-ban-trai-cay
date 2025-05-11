@@ -1,0 +1,15 @@
+.format-page h2 {
+  color: #2a9d8f;
+}
+.format-page h3 {
+  color: #e76f51;
+}
+.format-page h4 {
+  color: #e76f51;
+}
+.format-page {
+  padding: 50px;
+  background-color: #f9f9f9;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+}
