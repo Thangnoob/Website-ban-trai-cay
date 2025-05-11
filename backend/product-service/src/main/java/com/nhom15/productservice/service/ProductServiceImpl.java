@@ -45,4 +45,20 @@ public class ProductServiceImpl implements ProductService {
         copyProperties(product, productResponse);
         return productResponse;
     }
+
+    @Override
+    public void reduceQuantity(Long productId, long quantity) {
+        log.info("Reducing quantity {} for Id: {}", quantity,productId);
+        Product product = productRepository.findById(productId).orElseThrow(
+                ()-> new ProductServiceCustomException("Product not found","PRODUCT_NOT_FOUND")
+        );
+
+        if (product.getQuantity() < quantity) {
+            throw new ProductServiceCustomException("Quantity exceeded","QUANTITY_EXCEEDED");
+        }
+
+        product.setQuantity(product.getQuantity() - quantity);
+        productRepository.save(product);
+        log.info("Product reduced quantity");
+    }
 }
