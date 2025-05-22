@@ -1,5 +1,8 @@
+com\example\user_service\config\UserDetailsConfig.class
 com\example\user_service\dto\LoginRequest.class
+com\example\user_service\dto\ProfileRequest.class
 com\example\user_service\config\SecurityConfig.class
 com\example\user_service\security\JwtRequestFilter.class
 com\example\user_service\util\JwtUtil.class
+com\example\user_service\config\AppConfig.class
 com\example\user_service\config\CorsConfig.class
