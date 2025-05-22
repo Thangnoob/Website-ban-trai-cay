@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Fruits - Đăng nhập</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/images/logo.png" alt="Super Fruits Logo" width="40">
+                <span>SUPER FRUITS</span>
+            </div>
+            <nav>
+                <a href="/html/register.html">Đăng ký</a>
+                <a href="/html/login.html">Đăng nhập</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form-box">
+                <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
+                <div id="message" class="message"></div>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+                    </div>
+                    <button onclick="login()">Đăng nhập</button>
+                </form>
+                <p class="forgot-password">
+                    Bạn quên mật khẩu? <a href="/html/forgot-password.html">Click tại đây</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <script src="/js/login.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
