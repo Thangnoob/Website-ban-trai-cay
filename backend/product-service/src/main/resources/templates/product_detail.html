@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>Chi tiết sản phẩm</h1>
-<p>Tên sản phẩm: <span th:text="${product.name}"></span></p>
-<p>Giá: <span th:text="${product.price}"></span></p>
-<p>Mô tả: <span th:text="${product.description}"></span></p>
-<p>Ảnh: <img th:src="${product.imageUrl}" alt="Image" width="200" /></p>
-<a href="/products">Quay lại</a>
+<div class="container mt-4">
+    <h1>Chi tiết sản phẩm</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <div th:if="${product != null}">
+                <img th:src="${product.imagePath}" class="img-fluid mb-3" style="max-height: 300px;">
+                <h3 th:text="${product.name}"></h3>
+                <p class="text-success fs-4" th:text="${'Giá: ' + #numbers.formatCurrency(product.price)}"></p>
+                <a th:href="@{/view/products}" class="btn btn-secondary">Quay lại</a>
+                <a th:href="@{/view/products/update/{id}(id=${product.id})}" class="btn btn-warning">Cập nhật</a>
+            </div>
+            <div th:if="${product == null}" class="alert alert-danger">
+                Sản phẩm không tồn tại
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

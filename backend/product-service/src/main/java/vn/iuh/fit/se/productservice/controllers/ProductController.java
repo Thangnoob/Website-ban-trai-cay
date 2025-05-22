@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import vn.iuh.fit.se.productservice.models.Product;
 import vn.iuh.fit.se.productservice.services.ProductService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 
 //@Controller
-//@RequestMapping("/products")
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/products")
@@ -24,12 +25,18 @@ public class ProductController {
 //    @Autowired
     private final ProductService productService;
 
-    // Lấy danh sách tất cả sản phẩm
+//     Lấy danh sách tất cả sản phẩm
     @GetMapping
     public ResponseEntity<?> getAllProducts() {
         List<Product> products = productService.getAllProducts();
         return ResponseEntity.ok(products);
     }
+//    @GetMapping
+//    public String getAllProducts(Model model) {
+//        List<Product> products = productService.getAllProducts();
+//        model.addAttribute("products", products); // gán danh sách vào model
+//        return "index"; // trỏ đến file product_list.html trong templates
+//    }
 
     // Lấy sản phẩm theo ID
     @GetMapping("/{id}")
@@ -42,6 +49,29 @@ public class ProductController {
             return ResponseEntity.status(404).body("Không tìm thấy sản phẩm với ID = " + id);
         }
     }
+    @PostMapping("/getbyid")
+    public ResponseEntity<?> getProductByIdFromBody(@RequestBody Map<String, Object> body) {
+        if (!body.containsKey("id") || body.get("id") == null) {
+            return ResponseEntity.badRequest().body("Vui lòng nhập ID sản phẩm");
+        }
+
+        try {
+            Long id = Long.parseLong(body.get("id").toString());
+            Optional<Product> product = productService.getProductById(id);
+
+            if (product.isPresent()) {
+                return ResponseEntity.ok(product.get());
+            } else {
+                Map<String, String> error = new HashMap<>();
+                error.put("error", "Không tìm thấy sản phẩm với ID = " + id);
+                return ResponseEntity.status(404).body(error);
+            }
+        } catch (NumberFormatException e) {
+            return ResponseEntity.badRequest().body("ID phải là số hợp lệ");
+        }
+    }
+
+
 
     // Thêm sản phẩm mới
     @PostMapping("/add")

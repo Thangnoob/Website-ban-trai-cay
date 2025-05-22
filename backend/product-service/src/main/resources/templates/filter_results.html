@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sản phẩm trong khoảng giá</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Sản phẩm trong khoảng giá
+        <span th:text="${#numbers.formatCurrency(minPrice)}"></span> -
+        <span th:text="${#numbers.formatCurrency(maxPrice)}"></span>
+    </h1>
+
+    <div th:if="${products.empty}" class="alert alert-info">
+        Không có sản phẩm nào trong khoảng giá này
+    </div>
+
+    <table th:unless="${products.empty}" class="table table-bordered">
+        <!-- Giống bảng trong index.html -->
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}"></td>
+            <td th:text="${#numbers.formatCurrency(product.price)}"></td>
+            <td><img th:src="${product.imagePath}" width="100"></td>
+            <td>
+                <a th:href="@{/view/products/{id}(id=${product.id})}" class="btn btn-info btn-sm">Chi tiết</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/view/products}" class="btn btn-secondary">Quay lại danh sách</a>
+</div>
+</body>
+</html>
