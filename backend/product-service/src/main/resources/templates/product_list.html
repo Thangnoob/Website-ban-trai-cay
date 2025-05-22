@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Danh Sách Sản Phẩm</title>
+</head>
+<body>
+<h1>Danh Sách Sản Phẩm</h1>
+<ul>
+    <li th:each="product : ${products}">
+        <span th:text="${product.name}"></span> -
+        <span th:text="${product.price}"></span> USD
+        <form action="/cart/add" method="post">
+            <input type="hidden" name="cartId" value="1" />
+            <input type="hidden" name="productId" th:value="${product.id}" />
+            <button type="submit">Thêm vào giỏ hàng</button>
+        </form>
+    </li>
+</ul>
+<a href="/cart/view?cartId=1">Xem giỏ hàng</a>
+</body>
+</html>
