@@ -38,9 +38,6 @@ public class Order {
     @Column(name = "order_date")
     private Instant orderDate;
 
-    @Column(name = "total_price")
-    private Long totalPrice;
-
     @Column(name = "payment_mode")
     private PaymentMode paymentMode;
 }

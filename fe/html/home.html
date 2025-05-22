@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/product-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+    <script src="../js/product.js"></script>
+</head>
+
+<body>
+    <!--Header-->
+    <div id="header"></div>
+    <!--Carousel-->
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/BANNER.png" class="d-block" style="width:100%; height: 550px;" alt="banner1">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner2.jpg" class="d-block" style="width:100%; height: 550px;" alt="banner2">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner3.jpg" class="d-block" style="width:100%; height: 550px;" alt="banner3">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/banner4.jpg" class="d-block" style="width:100%; height: 550px;" alt="banner4">
+            </div>
+        </div>
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+    <!--Small card-->
+    <div class="container-fluid">
+        <div class="row boder border-top shadow p-3 my-3">
+            <div class="col-md-3 small-card d-flex flex-column">
+                <i class="fa-regular fa-star "></i>
+                <span>
+                    Cam kết Sản Phẩm Chất lượng
+                </span>
+                <h6 class="my-auto">Nguồn gốc xuất sứ rõ ràng</h6>
+            </div>
+            <div class="col-md-3 small-card d-flex flex-column">
+                <i class="fa-brands fa-cc-amazon-pay"></i>
+                <span>
+                    Thanh toán An toàn và Đa dạng
+                </span>
+                <h6>Thanh toán trực tuyến/trực tiếp</h6>
+            </div>
+            <div class="col-md-3 small-card d-flex flex-column">
+                <i class="fa-solid fa-truck"></i>
+                <span>
+                    Giao hàng nhanh chóng 2h
+                </span>
+                <h6>Tại nội thành TP.Hồ Chí Minh</h6>
+            </div>
+            <div class="col-md-3 small-card d-flex flex-column">
+                <i class="fa-solid fa-headset"> </i>
+                <span>
+                    Hỗ trợ 24/7
+                </span>
+                <h6>Luôn có mặc hỗ trợ và tư vấn khách hàng</h6>
+            </div>
+        </div>
+    </div>
+
+    <!--Popular product-->
+    <!-- Sản phẩm bán chạy -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Sản phẩm bán chạy</h2>
+        <div class="row" id="product-list">
+            <!-- Sản phẩm sẽ được thêm động bằng JavaScript -->
+        </div>
+    </section>
+
+
+    <!--Footer-->
+    <div id="footer"></div>
+
+</body>
+
+</html>

@@ -29,7 +29,7 @@ public class Product {
     @Column(name = "image_url", nullable = false)
     private String image_url;
 
-    @Column(name = "quantity", nullable = false)
+    @Column(name = "stock_quantity", nullable = false)
     private Long quantity;
 
     @Enumerated(EnumType.STRING)

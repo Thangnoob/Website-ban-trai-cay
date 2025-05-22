@@ -10,7 +10,24 @@
         <module name="service_registry" />
         <module name="ConfigServer" />
       </profile>
-      <profile name="Annotation profile for order-service" enabled="true">
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.36/5a30490a6e14977d97d9c73c924c1f1b5311ea95/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="vn.edu.iuh.fit.cart-service.main" />
+      </profile>
+      <profile name="Annotation profile for CloudGateway" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="CloudGateway" />
+      </profile>
+      <profile name="Annotation profile for product-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -18,16 +35,35 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="product-service" />
+        <module name="payment-serivce" />
         <module name="order-service" />
+      </profile>
+      <profile name="Annotation profile for user-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CloudGateway" options="-parameters" />
       <module name="ConfigServer" options="-parameters" />
+      <module name="cart-service" options="-parameters" />
+      <module name="cart-service.main" options="-parameters" />
+      <module name="cart-service.test" options="-parameters" />
       <module name="order-service" options="-parameters" />
+      <module name="payment-serivce" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="service_registry" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+      <module name="vn.edu.iuh.fit.cart-service" options="-parameters" />
+      <module name="vn.edu.iuh.fit.cart-service.main" options="-parameters" />
+      <module name="vn.edu.iuh.fit.cart-service.test" options="-parameters" />
     </option>
   </component>
 </project>

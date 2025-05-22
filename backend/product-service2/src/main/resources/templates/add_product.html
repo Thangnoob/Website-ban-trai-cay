@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+</head>
+<body>
+<h1>Thêm sản phẩm mới</h1>
+<form action="/products/add" method="POST" enctype="multipart/form-data">
+    <label for="name">Tên sản phẩm:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="price">Giá:</label>
+    <input type="number" id="price" name="price" required><br><br>
+
+    <label for="description">Mô tả:</label>
+    <textarea id="description" name="description"></textarea><br><br>
+
+    <label for="imageUrl">Ảnh sản phẩm:</label>
+    <input type="file" id="imageUrl" name="imageUrl" accept="image/*"><br><br>
+
+    <button type="submit">Thêm sản phẩm</button>
+</form>
+
+<br><a href="/products">Trở lại danh sách sản phẩm</a>
+</body>
+</html>

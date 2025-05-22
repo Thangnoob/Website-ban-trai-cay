@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/page-chinhsach-style.css">
+    <!--Thư viện để hoạt động thêm các trang header footer vào các trang html khác-->
+    <script src="../js/jquery-3.3.1.js"></script>
+    <!--Xử lý thêm trang header và footer-->
+    <script src="../js/js-custome.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container my-3 format-page">
+        <h2 class="text-center mb-4">Liên Hệ</h2>
+        <div class="row">
+            <!-- Cột bên trái: Bản đồ và thông tin liên hệ -->
+            <div class="col-md-6">
+                <!-- Bản đồ -->
+                <div class="map-container mb-4" style="height: 300px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.858237983235!2d106.68426510895766!3d10.822158889284854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBUUC5IQ00!5e0!3m2!1svi!2s!4v1730823610327!5m2!1svi!2s"
+                        style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <!-- Thông tin liên hệ -->
+                <div>
+                    <p><strong>Địa chỉ:</strong> Số 4 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. HCM</p>
+                    <p><strong>Số điện thoại:</strong> 0123 456 789</p>
+                    <p><strong>Email:</strong> superfruit@gmail.com</p>
+                    <p><strong>Hotline:</strong> 0987 654 321</p>
+                </div>
+            </div>
+
+            <!-- Cột bên phải: Form đăng ký tư vấn -->
+            <div class="col-md-6">
+                <h4>Đăng ký tư vấn</h4>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nhập họ và tên">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số điện thoại</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Nội dung tư vấn</label>
+                        <textarea class="form-control" id="message" rows="3"
+                            placeholder="Nhập nội dung bạn muốn tư vấn"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Gửi đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+</body>
+
+</html>
